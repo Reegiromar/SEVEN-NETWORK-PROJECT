@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+    <!-- Character Set & Mobile Viewport Setup -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seven Network ($SEVEN) | Cosmic Crypto Ecosystem</title>
+    
+    <!-- External Dependencies: Tailwind CDN, Google Fonts, FontAwesome -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind Custom Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Space Grotesk', 'sans-serif'],
+                        heading: ['Rajdhani', 'sans-serif'],
+                    },
+                    colors: {
+                        cosmic: {
+                            900: '#06040d',
+                            800: '#0f0a1c',
+                            700: '#1a122e',
+                            gold: '#f3ba2f',
+                            purple: '#8b5cf6',
+                            cyan: '#06b6d4',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS Styles & Animations -->
+    <style>
+        /* Cosmic Background Gradients */
+        body {
+            background-color: #06040d;
+            background-image: 
+                radial-gradient(at 10% 10%, rgba(139, 92, 246, 0.15) 0px, transparent 50%),
+                radial-gradient(at 90% 20%, rgba(6, 182, 212, 0.15) 0px, transparent 50%),
+                radial-gradient(at 50% 80%, rgba(243, 186, 47, 0.1) 0px, transparent 50%);
+            background-attachment: fixed;
+        }
+
+        /* Glassmorphism Components */
+        .glass-card {
+            background: rgba(15, 10, 28, 0.65);
+            -webkit-backdrop-filter: blur(16px);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-nav {
+            background: rgba(6, 4, 13, 0.75);
+            -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Glow Effects & Borders */
+        .neon-border-cyan {
+            border: 1px solid rgba(6, 182, 212, 0.4);
+            box-shadow: 0 0 15px rgba(6, 182, 212, 0.15);
+        }
+
+        .neon-border-gold {
+            border: 1px solid rgba(243, 186, 47, 0.4);
+            box-shadow: 0 0 15px rgba(243, 186, 47, 0.15);
+        }
+
+        .glow-effect {
+            filter: drop-shadow(0 0 25px rgba(139, 92, 246, 0.35));
+        }
+
+        /* Floating Logo Keyframe Animation */
+        @keyframes float {
+            0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+            50% { transform: translate3d(0, -12px, 0) rotate(1deg); }
+        }
+
+        .floating-logo {
+            animation: float 6s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="text-slate-100 min-h-screen flex flex-col justify-between overflow-x-hidden">
+
+    <!-- Sticky Navigation Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- Brand Logo & Title -->
+            <a href="#" class="flex items-center gap-3 group">
+                <img src="Images/SEVENLOGO.png" alt="SEVEN Network" class="w-12 h-12 rounded-full object-cover border border-amber-500/30 group-hover:scale-105 transition-transform duration-300">
+                <span class="font-heading text-2xl font-bold tracking-wider bg-gradient-to-r from-amber-300 via-purple-300 to-cyan-400 bg-clip-text text-transparent">
+                    SEVEN NETWORK
+                </span>
+            </a>
+
+            <!-- Desktop Navigation Links -->
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm tracking-wide">
+                <a href="#" class="text-amber-400 hover:text-amber-300 transition-colors">Home</a>
+                <a href="" target="_blank" rel="noopener" class="text-slate-300 hover:text-cyan-400 transition-colors flex items-center gap-2">
+                    <i class="fa-solid fa-gamepad text-cyan-400"></i> Mining Game
+                </a>
+                <!--
+                <a href="https://t.me/SevenNetworkOfficial" target="_blank" rel="noopener" class="text-slate-300 hover:text-purple-400 transition-colors flex items-center gap-2">
+                    <i class="fa-brands fa-telegram text-purple-400"></i> Telegram
+                </a>
+                -->
+                <a href="https://x.com/SEVN_Network" target="_blank" rel="noopener" class="text-slate-300 hover:text-cyan-400 transition-colors flex items-center gap-2">
+                    <i class="fa-brands fa-x-twitter"></i> X (Twitter)
+                </a>
+                
+                <a href="" target="_blank" rel="noopener" class="text-slate-300 hover:text-cyan-400 transition-colors flex items-center gap-2">
+                    <i class="fa-brands fa-youtube text-red-500"></i> YouTube
+                </a>
+                <a href="https://t.me/+u8u4UmR9JGRiZGUy" target="_blank" rel="noopener" class="px-4 py-2 rounded-xl glass-card text-amber-400 hover:border-amber-400/50 transition-all flex items-center gap-2">
+                    <i class="fa-solid fa-headset"></i> Support
+                </a>
+            </nav>
+
+            <!-- Mobile Hamburger Button -->
+            <button id="mobile-menu-btn" type="button" title="Toggle Menu" class="md:hidden text-slate-300 hover:text-white p-2 text-xl focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Dropdown Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden glass-card border-t border-slate-800 px-6 py-6 space-y-4">
+            <a href="#" class="block text-amber-400 font-semibold">Home</a>
+            <a href="https://t.me/SEVEN_Coin_2026_bot" target="_blank" rel="noopener" class="block text-slate-300 hover:text-cyan-400">Mining Game</a>
+            <a href="https://t.me/SevenNetworkOfficial" target="_blank" rel="noopener" class="block text-slate-300 hover:text-purple-400">Official Telegram</a>
+            <a href="https://x.com/SEVN_Network" target="_blank" rel="noopener" class="block text-slate-300 hover:text-cyan-400">X (Twitter)</a>
+            <a href="" target="_blank" rel="noopener" class="block text-slate-300 hover:text-amber-400">YouTube</a>
+            <a href="" target="_blank" rel="noopener" class="block text-slate-300 hover:text-amber-400">TikTok</a>
+            <a href="https://t.me/+Kxm3qXOMFKNhOGQy" target="_blank" rel="noopener" class="block text-slate-300 hover:text-amber-400">Free Support</a>
+            <a href="https://t.me/+u8u4UmR9JGRiZGUy" target="_blank" rel="noopener" class="block text-slate-300 hover:text-amber-400"> Paid Support</a>
+
+        </div>
+    </header>
+
+    <!-- Main Hero Content Section -->
+    <main class="pt-32 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto flex-grow flex flex-col justify-center items-center text-center">
+        
+        <!-- Central Animated Circular Emblem -->
+        <div class="relative my-6 group rounded-full flex items-center justify-center">
+            <!-- Background Glow Element -->
+            <div class="absolute -inset-4 bg-gradient-to-r from-amber-500 via-purple-600 to-cyan-500 rounded-full blur-2xl opacity-40 group-hover:opacity-60 transition duration-1000"></div>
+            
+            <!-- Masked Circular Image Container -->
+            <div class="relative w-56 h-56 sm:w-72 sm:h-72 rounded-full overflow-hidden border-2 border-amber-400/30 shadow-2xl floating-logo glow-effect focus:outline-none select-none">
+                <!-- Updated scale class to scale-[1.15] for valid Tailwind rendering -->
+                <img src="Images/SEVENLOGO.png" alt="SEVEN Emblem" class="w-full h-full object-cover rounded-full scale-[1.15]">
+            </div>
+        </div>
+
+        <!-- Main Title -->
+        <h1 class="font-heading text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight mt-4">
+            <span class="bg-gradient-to-r from-amber-300 via-purple-200 to-cyan-400 bg-clip-text text-transparent">
+                SEVEN NETWORK
+            </span>
+        </h1>
+
+        <!-- Subtitle Description -->
+        <p class="max-w-2xl text-base sm:text-xl text-slate-300 mt-4 leading-relaxed font-normal px-2">
+            Seven Network ($SEVEN) is a cosmic crypto ecosystem featuring an active mining bot and P2E games like Seven Snake on Telegram.
+        </p>
+
+        <!-- Call to Action Buttons -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8 w-full max-w-lg">
+            <a href="https://raydium.io/swap/?inputMint=sol&outputMint=Ho3DNyGDTuKoFdA1bd6obE9xaL4RuStHUW1eLpodHS53" 
+               target="_blank" rel="noopener" 
+               class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 font-bold text-slate-900 shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/40 hover:-translate-y-0.5 transition-all flex items-center justify-center gap-3">
+                <i class="fa-solid fa-right-left text-lg"></i>
+                Buy on Raydium
+            </a>
+
+            <a href="https://dexscreener.com/solana/EW9akAzihzBhPh1kFWMrTyJmLAjGczJeKn5ni2YMj5tV" 
+               target="_blank" rel="noopener" 
+               class="w-full sm:w-auto px-8 py-4 rounded-2xl glass-card font-bold text-slate-200 border border-purple-500/30 hover:border-purple-400 hover:text-white hover:-translate-y-0.5 transition-all flex items-center justify-center gap-3">
+                <i class="fa-solid fa-chart-line text-purple-400 text-lg"></i>
+                DexScreener
+            </a>
+
+            <a href="https://share.google/dItHyoeGjclvpbA6Z" 
+               target="_blank" rel="noopener" 
+               class="w-full sm:w-auto px-8 py-4 rounded-2xl glass-card font-bold text-slate-200 border border-purple-500/30 hover:border-purple-400 hover:text-white hover:-translate-y-0.5 transition-all flex items-center justify-center gap-3">
+                <i class="fa-solid fa-lock text-purple-400 text-lg"></i>
+                <span>Streamflow <span class="text-purple-400"> %60</span> Lockup 3 Years</span> 
+            </a> 
+        </div>
+
+        <!-- Contract Address Display Box with Copy Button -->
+        <div class="mt-8 w-full max-w-2xl">
+            <div class="glass-card rounded-2xl p-3 sm:p-4 flex flex-col sm:flex-row items-center justify-between gap-3 border border-slate-800">
+                <div class="flex items-center gap-2 overflow-hidden w-full sm:w-auto">
+                    <span class="text-xs uppercase tracking-widest font-semibold text-amber-400 px-2 py-1 rounded bg-amber-400/10 border border-amber-400/20 shrink-0">
+                        Contract
+                    </span>
+                    <span id="ca-text" class="font-mono text-xs sm:text-sm text-slate-300 truncate">
+                        ho3dnygdtukofda1bd6obe9xal4rusthuw1elpodhs53
+                    </span>
+                </div>
+                <button onclick="copyContractAddress()" class="w-full sm:w-auto px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold tracking-wider transition-colors flex items-center justify-center gap-2 shrink-0">
+                    <i id="copy-icon" class="fa-regular fa-copy"></i>
+                    <span id="copy-text">Copy CA</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Tokenomics Information Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-4 gap-6 mt-16 w-full max-w-5xl">
+            
+            <div class="glass-card neon-border-gold rounded-2xl p-6 flex flex-col items-center justify-center text-center">
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-2">Total Supply</span>
+                <span class="font-heading text-2xl sm:text-3xl font-extrabold text-amber-400">7,000,000 $SEVEN</span>
+            </div>
+
+            <div class="glass-card border border-purple-500/40 rounded-2xl p-6 flex flex-col items-center justify-center text-center shadow-[0_0_15px_rgba(139,92,246,0.15)]">
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-2">Liquidity</span>
+                <span class="font-heading text-2xl sm:text-3xl font-extrabold text-purple-300">Locked & Audited</span>
+            </div>
+
+            <div class="glass-card neon-border-cyan rounded-2xl p-6 flex flex-col items-center justify-center text-center">
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-2">Network</span>
+                <span class="font-heading text-2xl sm:text-3xl font-extrabold text-cyan-400">Solana SPL High Speed</span>
+            </div>
+
+            <div class="glass-card neon-border-cyan rounded-2xl p-6 flex flex-col items-center justify-center text-center">
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-2">BURNT</span>
+                <span class="font-heading text-2xl sm:text-3xl font-extrabold text-cyan-400">17.4323%</span>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="border-t border-slate-900 py-8 px-4 text-center text-xs text-slate-500 glass-nav mt-12">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+            <!-- Corrected nested paragraph syntax -->
+            <div class="text-left sm:text-center">
+                <p>&copy; 2026 Seven Network. All rights reserved.</p>
+                <p class="text-xs text-slate-400 mt-1">
+                    Developed by 
+                    <a href="https://www.instagram.com/reegiromar/" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="text-amber-400 hover:text-amber-300 underline font-semibold transition-colors">
+                        Reegir Omar
+                    </a>
+                </p>
+            </div>
+            
+            <!-- Footer Quick Links 
+            <div class="flex items-center gap-6 text-sm">
+                <a href="https://t.me/SEVEN_Coin_2026_bot" target="_blank" rel="noopener" class="hover:text-amber-400 transition-colors"><i class="fa-solid fa-robot"></i> Mining Bot</a>
+                <a href="https://t.me/SevenNetworkOfficial" target="_blank" rel="noopener" class="hover:text-purple-400 transition-colors"><i class="fa-brands fa-telegram"></i> Telegram</a>
+                <a href="https://x.com/SEVN_Network" target="_blank" rel="noopener" class="hover:text-cyan-400 transition-colors"><i class="fa-brands fa-x-twitter"></i> X</a>
+            </div>
+            -->
+        </div>
+    </footer>
+
+    <!-- Client-Side JavaScript Functionality -->
+    <script>
+        // Toggle Mobile Dropdown Menu Visibility
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Copy Contract Address to Clipboard Functionality
+        function copyContractAddress() {
+            const contractAddress = "ho3dnygdtukofda1bd6obe9xal4rusthuw1elpodhs53";
+            navigator.clipboard.writeText(contractAddress).then(() => {
+                const copyText = document.getElementById('copy-text');
+                const copyIcon = document.getElementById('copy-icon');
+                
+                copyText.innerText = "Copied!";
+                copyIcon.className = "fa-solid fa-check text-green-400";
+
+                setTimeout(() => {
+                    copyText.innerText = "Copy CA";
+                    copyIcon.className = "fa-regular fa-copy";
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>
